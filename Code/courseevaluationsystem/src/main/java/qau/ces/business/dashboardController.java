@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package qau.ces;
+package qau.ces.business;
 
 import java.io.File;
 import java.net.URL;
@@ -48,14 +43,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import qau.ces.data.courseData;
+import qau.ces.data.database;
+import qau.ces.data.getData;
+import qau.ces.data.studentData;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * SUBSCRIBE OUR YOUTUBE CHANNEL -> https://www.youtube.com/channel/UCPgcmw0LXToDn49akUEJBkQ
- * THANKS FOR YOUR SUPPORT : ) 
- */
+
 public class dashboardController implements Initializable {
 
     @FXML

@@ -8,6 +8,7 @@ module qau.ces {
     requires fontawesomefx; // Add missing fontawesomefx module
 
     opens qau.ces to javafx.fxml;
+    opens qau.ces.business to javafx.fxml;
     
     
     exports qau.ces;

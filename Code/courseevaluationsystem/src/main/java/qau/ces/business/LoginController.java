@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package qau.ces;
+package qau.ces.business;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -26,12 +21,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import qau.ces.data.database;
+import qau.ces.data.getData;
 
-/**
- *
- * @author WINDOWS 10
- */
-public class FXMLDocumentController implements Initializable {
+
+public class LoginController implements Initializable {
     
     @FXML
     private AnchorPane main_form;
