@@ -5,7 +5,7 @@ module qau.ces {
     requires java.sql;
     requires transitive javafx.base;
     requires transitive javafx.graphics;
-    requires fontawesomefx; // Add missing fontawesomefx module
+    
 
     opens qau.ces to javafx.fxml;
     opens qau.ces.business to javafx.fxml;
