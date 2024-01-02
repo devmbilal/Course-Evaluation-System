@@ -17,7 +17,7 @@ public class CourseEvaluationSystem extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("presentation/authentication/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("presentation/dashboard/dashboard.fxml"));
         
         Scene scene = new Scene(root);
 //        LETS DESIGN IT USING CSS : ) 
