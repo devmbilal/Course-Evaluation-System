@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+
+<AnchorPane fx:id="studentGrade_form" prefHeight="555.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qau.ces.presentation.dashboard.DashboardUI">
+                         <children>
+                              <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="522.0" prefWidth="261.0" stylesheets="@Design.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="studentGrade_studentNum" layoutX="108.0" layoutY="30.0" prefHeight="25.0" prefWidth="139.0" styleClass="textfield" stylesheets="@resultDesign.css" />
+                                    <Label layoutX="34.0" layoutY="33.0" text="Student #:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="68.0" layoutY="75.0" text="Year:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="studentGrade_year" layoutX="108.0" layoutY="71.0" prefHeight="25.0" prefWidth="139.0" styleClass="label-info" stylesheets="@resultDesign.css" />
+                                    <Label layoutX="53.0" layoutY="116.0" text="Course:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="studentGrade_course" layoutX="108.0" layoutY="112.0" prefHeight="25.0" prefWidth="139.0" styleClass="label-info" stylesheets="@resultDesign.css" />
+                                    <TextField fx:id="studentGrade_mid" layoutX="108.0" layoutY="153.0" prefHeight="25.0" prefWidth="139.0" styleClass="textfield" stylesheets="@resultDesign.css" />
+                                    <Label layoutX="37.0" layoutY="157.0" text="Mid Term:">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_terminal" layoutX="108.0" layoutY="193.0" prefHeight="25.0" prefWidth="139.0" styleClass="textfield" stylesheets="@resultDesign.css" />
+                                    <Label layoutX="14.0" layoutY="197.0" text="Terminal:" AnchorPane.leftAnchor="18.0">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="studentGrade_clearBtn" layoutX="146.0" layoutY="261.0" mnemonicParsing="false"  prefHeight="40.0" prefWidth="93.0" styleClass="clear-btn" stylesheets="@resultDesign.css" text="Clear" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="296.0" layoutY="17.0" prefHeight="522.0" prefWidth="587.0" stylesheets="@resultDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="studentGrade_tableView" layoutX="13.0" layoutY="52.0"  prefHeight="456.0" prefWidth="562.0">
+                                      <columns>
+                                        <TableColumn fx:id="studentGrade_col_studentNum" prefWidth="75.0" text="Student ID" />
+                                        <TableColumn fx:id="studentGrade_col_year" prefWidth="85.0" text="Year" />
+                                          <TableColumn fx:id="studentGrade_col_course" prefWidth="92.0" text="Course" />
+                                          <TableColumn fx:id="studentGrade_col_firstSem" prefWidth="109.0" text="Mid Term" />
+                                          <TableColumn fx:id="studentGrade_col_secondSem" prefWidth="99.0" text="Terminal" />
+                                          <TableColumn fx:id="studentGrade_col_final" prefWidth="100.0" text="Final" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="studentGrade_search" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="269.0" promptText="Search" styleClass="search" stylesheets="@resultDesign.css" />
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="22.0" layoutY="35.0" size="1.5em" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+</AnchorPane>
