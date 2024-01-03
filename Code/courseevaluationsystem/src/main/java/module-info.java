@@ -9,6 +9,7 @@ module qau.ces {
 
     opens qau.ces to javafx.fxml;
     opens qau.ces.presentation.authentication to javafx.fxml;
+    opens qau.ces.presentation.dashboard to javafx.fxml;
     
     
     exports qau.ces;
