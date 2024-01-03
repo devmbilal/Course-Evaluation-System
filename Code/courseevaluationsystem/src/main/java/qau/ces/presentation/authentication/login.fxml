@@ -11,14 +11,14 @@
 
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qau.ces.business.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qau.ces.presentation.authentication.LoginUI">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
             <AnchorPane prefHeight="409.0" prefWidth="298.0" styleClass="left-form" stylesheets="@loginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <FontAwesomeIcon fill="WHITE" glyphName="GRADUATION_CAP" layoutX="72.0" layoutY="186.0" size="10em" />
-                  <Label layoutX="19.0" layoutY="205.0" text="Student Management System" textFill="WHITE">
+                  <Label layoutX="19.0" layoutY="205.0" text="Course Evaluation System" textFill="WHITE">
                      <font>
                         <Font name="Tahoma" size="20.0" />
                      </font>
