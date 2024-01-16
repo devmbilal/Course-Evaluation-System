@@ -69,7 +69,16 @@
                                  </font>
                               </Label>
                               <Line endX="85.0" layoutX="109.0" layoutY="173.0" startX="-100.0" stroke="WHITE" />
-
+                              <Button fx:id="majorInstrument_btn" layoutX="12.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css"  text="Add Major Inst">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minorInstrument_btn" layoutX="12.0" layoutY="246.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Add Minor Inst">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="1.5em" />
+                                 </graphic>
+                              </Button>
                               <Button fx:id="studentGrade_btn" layoutX="12.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Grades of Students">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="CLIPBOARD" size="1.5em" />
@@ -95,12 +104,147 @@
                   </AnchorPane>
                </left>
                <center>
-                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                           <fx:include source="../result/resultForm.fxml"/>
+                           
+<AnchorPane fx:id="majorInstrument_form" layoutX="30.0" layoutY="61.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="517.0" prefWidth="400.0" stylesheets="@dashboardDesign.css">
+            <!-- Apply the same styleClass as in the courses form -->
+            <styleClass>
+                <String fx:value="shadow" />
+                <String fx:value="white-bg" />
+            </styleClass>
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" text="Instrument Name" />
+                <TextField fx:id="majorInstrument_name" layoutX="14.0" layoutY="30.0" />
+                <Label layoutX="14.0" layoutY="70.0" text="Courses" />
+                <ComboBox fx:id="majorInstrument_course" layoutX="14.0" layoutY="90.0" />
+                <Label layoutX="14.0" layoutY="130.0" text="Percentage" />
+                <TextField fx:id="majorInstrument_percentage" layoutX="14.0" layoutY="150.0" />
+                <Label layoutX="14.0" layoutY="190.0" text="Marks" />
+                <TextField fx:id="majorInstrument_marks" layoutX="14.0" layoutY="210.0" />
+                <Button fx:id="majorInstrument_addBtn" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" styleClass="add-btn" onAction="#majorInstrumentAdd" stylesheets="@dashboardDesign.css" text="Add" />
+                <Button fx:id="majorInstrument_updateBtn" layoutX="80.0" layoutY="250.0" mnemonicParsing="false" styleClass="update-btn" onAction="#majorInstrumentUpdate" stylesheets="@dashboardDesign.css" text="Update" />
+                <!-- Move Clear and Delete to the next line -->
+                <Button fx:id="majorInstrument_clearBtn" layoutX="14.0" layoutY="300.0" mnemonicParsing="false" styleClass="clear-btn" onAction="#majorInstrumentClear" stylesheets="@dashboardDesign.css" text="Clear" />
+                <Button fx:id="majorInstrument_deleteBtn" layoutX="80.0" layoutY="300.0" mnemonicParsing="false" styleClass="delete-btn" onAction="#deleteMajorInstrument" stylesheets="@dashboardDesign.css" text="Delete" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="434.0" layoutY="19.0" prefHeight="517.0" prefWidth="469.0" stylesheets="@dashboardDesign.css">
+            <!-- Apply the same styleClass as in the courses form -->
+            <styleClass>
+                <String fx:value="shadow" />
+                <String fx:value="white-bg" />
+            </styleClass>
+            <children>
+                <TableView fx:id="majorInstrument_tableView" layoutX="14.0" layoutY="14.0" prefHeight="490.0" prefWidth="441.0">
+                    <columns>
+                        <TableColumn fx:id="majorInstrument_col_name" prefWidth="110.0" text="Instrument Name" />
+                        <TableColumn fx:id="majorInstrument_col_course" prefWidth="110.0" text="Course" />
+                        <TableColumn fx:id="majorInstrument_col_percentage" prefWidth="110.0" text="Percentage" />
+                        <TableColumn fx:id="majorInstrument_col_marks" prefWidth="110.0" text="Marks" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
+
+<AnchorPane fx:id="minorInstrument_form" layoutX="30.0" layoutY="61.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="517.0" prefWidth="400.0" stylesheets="@dashboardDesign.css">
+            <!-- Apply the same styleClass as in the courses form -->
+            <styleClass>
+                <String fx:value="shadow" />
+                <String fx:value="white-bg" />
+            </styleClass>
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" text="Instrument Name" />
+                <TextField fx:id="minorInstrument_name" layoutX="14.0" layoutY="30.0" />
+                <Label layoutX="14.0" layoutY="70.0" text="Major Instrument" />
+                <ComboBox fx:id="minorInstrument_majorInstrument" layoutX="14.0" layoutY="90.0" />
+                <Label layoutX="14.0" layoutY="130.0" text="Percentage" />
+                <TextField fx:id="minorInstrument_percentage" layoutX="14.0" layoutY="150.0" />
+                <Label layoutX="14.0" layoutY="190.0" text="Marks" />
+                <TextField fx:id="minorInstrument_marks" layoutX="14.0" layoutY="210.0" />
+                <Button fx:id="minorInstrument_addBtn" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                <Button fx:id="minorInstrument_updateBtn" layoutX="80.0" layoutY="250.0" mnemonicParsing="false" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                <!-- Move Clear and Delete to the next line -->
+                <Button fx:id="minorInstrument_clearBtn" layoutX="14.0" layoutY="300.0" mnemonicParsing="false" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Clear" />
+                <Button fx:id="minorInstrument_deleteBtn" layoutX="80.0" layoutY="300.0" mnemonicParsing="false" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="434.0" layoutY="19.0" prefHeight="517.0" prefWidth="469.0" stylesheets="@dashboardDesign.css">
+            <!-- Apply the same styleClass as in the courses form -->
+            <styleClass>
+                <String fx:value="shadow" />
+                <String fx:value="white-bg" />
+            </styleClass>
+            <children>
+                <TableView fx:id="minorInstrument_tableView" layoutX="14.0" layoutY="14.0" prefHeight="490.0" prefWidth="441.0">
+                    <columns>
+                        <TableColumn fx:id="minorInstrument_col_name" prefWidth="110.0"  text="Instrument Name" />
+                        <TableColumn fx:id="minorInstrument_col_majorInstrument" prefWidth="110.0" text="Major Instrument" />
+                        <TableColumn fx:id="minorInstrument_col_percentage" prefWidth="110.0" text="Percentage" />
+                        <TableColumn fx:id="minorInstrument_col_marks" prefWidth="110.0" text="Marks" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
+
+
+
+                        <AnchorPane fx:id="studentGrade_form" layoutX="59.0" layoutY="47.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                           <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="522.0" prefWidth="261.0" stylesheets="@resultDesign.css">
+                           <styleClass>
+                           <String fx:value="white-bg" />
+                           <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                           <Label layoutX="68.0" layoutY="75.0" text="Year:">
+                           <font>
+                           <Font name="Tahoma" size="14.0" />
+                           </font>
+                           </Label>
+                           <ComboBox fx:id="studentGrade_year" layoutX="108.0" layoutY="71.0" prefHeight="25.0" prefWidth="139.0" styleClass="label-info" stylesheets="@resultDesign.css" />
+                           <Label layoutX="53.0" layoutY="116.0" text="Course:">
+                           <font>
+                           <Font name="Tahoma" size="14.0" />
+                           </font>
+                           </Label>
+                           <ComboBox fx:id="studentGrade_course" layoutX="108.0" layoutY="112.0" prefHeight="25.0" prefWidth="139.0" styleClass="label-info" stylesheets="@resultDesign.css" />
+                
+                           </children>
+                           </AnchorPane>
+                           <AnchorPane layoutX="296.0" layoutY="17.0" prefHeight="522.0" prefWidth="587.0" stylesheets="@resultDesign.css">
+                           <styleClass>
+                           <String fx:value="white-bg" />
+                           <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                           <TableView fx:id="studentGrade_tableView" layoutX="13.0" layoutY="52.0"  prefHeight="456.0" prefWidth="562.0">
+                           <columns>
+                           <TableColumn fx:id="studentGrade_col_studentNum" prefWidth="75.0" text="Student ID" />
+                           <TableColumn fx:id="studentGrade_col_year" prefWidth="85.0" text="Year" />
+                           <TableColumn fx:id="studentGrade_col_course" prefWidth="92.0" text="Course" />
+                           <TableColumn fx:id="studentGrade_col_firstSem" prefWidth="109.0" text="Mid Term" />
+                           <TableColumn fx:id="studentGrade_col_secondSem" prefWidth="99.0" text="Terminal" />
+                           <TableColumn fx:id="studentGrade_col_final" prefWidth="100.0" text="Final" />
+                           </columns>
+                           </TableView>
+                           <TextField fx:id="studentGrade_search" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="269.0" promptText="Search" styleClass="search" stylesheets="@resultDesign.css" />
+                           <FontAwesomeIcon glyphName="SEARCH" layoutX="22.0" layoutY="35.0" size="1.5em" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
-               </center>
+                </children>
+          </AnchorPane>
+               </center> 
             </BorderPane>
          </children>
       </AnchorPane>
