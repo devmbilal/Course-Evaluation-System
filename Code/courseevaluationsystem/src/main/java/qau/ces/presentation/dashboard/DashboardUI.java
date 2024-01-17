@@ -52,7 +52,7 @@ public class DashboardUI implements Initializable {
     private Label username;
 
      @FXML
-    private Button home_btn;
+    private Button enterMarks_btn;
  
     @FXML
     private Button minorInstrument_btn;
@@ -72,12 +72,15 @@ public class DashboardUI implements Initializable {
     @FXML 
     private AnchorPane minorInstrument_form;
 
+    @FXML 
+    private AnchorPane enterMarksForm;
+   
 
     @FXML 
     private AnchorPane majorInstrument_form;
     
-    @FXML
-    private AnchorPane studentGrade_form;
+@FXML
+private AnchorPane studentGrade_form;
 
 // Major Instruments
 
@@ -621,45 +624,45 @@ public void availableMinorSelect() {
     }}
 
     public void switchForm(ActionEvent event) {
-        // if (event.getSource() == home_btn) {
-        //     home_form.setVisible(true);
-        //     addStudents_form.setVisible(false);
-        //     majorInstrument_form.setVisible(false);
-        //     studentGrade_form.setVisible(false);
+        if (event.getSource() == enterMarks_btn) {
+            enterMarksForm.setVisible(true);
+            minorInstrument_form.setVisible(false);
+            majorInstrument_form.setVisible(false);
+            studentGrade_form.setVisible(false);
 
-        //     home_btn.setStyle("-fx-background-color:linear-gradient(to bottom right, #3f82ae, #26bf7d);");
-        //     addStudents_btn.setStyle("-fx-background-color:transparent");
-        //     majorInstrument_btn.setStyle("-fx-background-color:transparent");
-        //     studentGrade_btn.setStyle("-fx-background-color:transparent");
+            enterMarks_btn.setStyle("-fx-background-color:linear-gradient(to bottom right, #3f82ae, #26bf7d);");
+            minorInstrument_btn.setStyle("-fx-background-color:transparent");
+            majorInstrument_btn.setStyle("-fx-background-color:transparent");
+            studentGrade_btn.setStyle("-fx-background-color:transparent");
 
-        // }
+        }else
         if (event.getSource() == minorInstrument_btn) {
-            // home_form.setVisible(false);
+            enterMarksForm.setVisible(false);
             minorInstrument_form.setVisible(true);
             majorInstrument_form.setVisible(false);
             studentGrade_form.setVisible(false);
 
             minorInstrument_btn.setStyle("-fx-background-color:linear-gradient(to bottom right, #3f82ae, #26bf7d);");
-            // home_btn.setStyle("-fx-background-color:transparent");
+            enterMarks_btn.setStyle("-fx-background-color:transparent");
             majorInstrument_btn.setStyle("-fx-background-color:transparent");
             studentGrade_btn.setStyle("-fx-background-color:transparent");
 
         } 
         else if (event.getSource() == majorInstrument_btn) {
-            // home_form.setVisible(false);
+            enterMarksForm.setVisible(false);
             minorInstrument_form.setVisible(false);
             majorInstrument_form.setVisible(true);
             studentGrade_form.setVisible(false);
 
             majorInstrument_btn.setStyle("-fx-background-color:linear-gradient(to bottom right, #3f82ae, #26bf7d);");
             minorInstrument_btn.setStyle("-fx-background-color:transparent");
-            // home_btn.setStyle("-fx-background-color:transparent");
+            enterMarks_btn.setStyle("-fx-background-color:transparent");
             studentGrade_btn.setStyle("-fx-background-color:transparent");
 
 
         } 
         else if (event.getSource() == studentGrade_btn) {
-            // home_form.setVisible(false);
+               enterMarksForm.setVisible(false);
                minorInstrument_form.setVisible(false);
                majorInstrument_form.setVisible(false);
                studentGrade_form.setVisible(true);
@@ -667,7 +670,7 @@ public void availableMinorSelect() {
                studentGrade_btn.setStyle("-fx-background-color:linear-gradient(to bottom right, #3f82ae, #26bf7d);");
                minorInstrument_btn.setStyle("-fx-background-color:transparent");
                majorInstrument_btn.setStyle("-fx-background-color:transparent");
-            // home_btn.setStyle("-fx-background-color:transparent");
+               enterMarks_btn.setStyle("-fx-background-color:transparent");
 
         }
     }

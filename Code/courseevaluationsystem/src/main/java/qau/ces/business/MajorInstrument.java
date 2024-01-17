@@ -108,7 +108,7 @@ public class MajorInstrument {
 
     // Method to check if a MajorInstrument already exists
     public static boolean isMajorInstrumentExist(String name) {
-        // Your logic to check existence in the database
+        
         return false;
     }
 

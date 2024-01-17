@@ -79,6 +79,11 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="1.5em" />
                                  </graphic>
                               </Button>
+                              <Button fx:id="enterMarks_btn" layoutX="12.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Enter Marks">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" size="1.5em" />
+                                 </graphic>
+                              </Button>
                               <Button fx:id="studentGrade_btn" layoutX="12.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Grades of Students">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="CLIPBOARD" size="1.5em" />
@@ -196,7 +201,41 @@
     </children>
 </AnchorPane>
 
+<AnchorPane fx:id="enterMarksForm" layoutX="30.0" layoutY="61.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="527.0" prefWidth="870.0" stylesheets="@dashboardDesign.css">
+            <styleClass>
+                <String fx:value="white-bg" />
+                <String fx:value="shadow" />
+            </styleClass>
+            <children>
+                <Label layoutX="10.0" layoutY="10.0" text="Enter Marks:" styleClass="section-header" />
 
+                <ComboBox fx:id="enterMarks_course" layoutX="10.0" layoutY="40.0"  prefHeight="25.0" prefWidth="166.0" promptText="Choose Course" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                <ComboBox fx:id="enterMarks_student" layoutX="10.0" layoutY="80.0"  prefHeight="25.0" prefWidth="166.0" promptText="Choose Student" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                <ComboBox fx:id="enterMarks_major" layoutX="10.0" layoutY="120.0"  prefHeight="25.0" prefWidth="166.0" promptText="Choose Major" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                <ComboBox fx:id="enterMarks_minor" layoutX="10.0" layoutY="160.0"  prefHeight="25.0" prefWidth="166.0" promptText="Choose Minor" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                <TextField fx:id="enterMarks_marks" layoutX="10.0" layoutY="200.0" prefHeight="25.0" prefWidth="166.0" promptText="Enter Marks" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+
+                <Button fx:id="enterMarks_submit" layoutX="10.0" layoutY="240.0" mnemonicParsing="false"  prefHeight="35.0" prefWidth="85.0" styleClass="submit-btn" stylesheets="@dashboardDesign.css" text="Submit" />
+                <Button fx:id="enterMarks_update" layoutX="105.0" layoutY="240.0" mnemonicParsing="false"  prefHeight="35.0" prefWidth="85.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                <Button fx:id="enterMarks_delete" layoutX="200.0" layoutY="240.0" mnemonicParsing="false"  prefHeight="35.0" prefWidth="85.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+
+                <TableView fx:id="enterMarks_studentsTable" layoutX="10.0" layoutY="290.0" prefHeight="192.0" prefWidth="845.0">
+                    <columns>
+                        <TableColumn fx:id="enterMarks_studentNum" prefWidth="75.0" text="Student #" />
+                        <TableColumn fx:id="enterMarks_firstName" prefWidth="153.0" text="First Name" />
+                        <TableColumn fx:id="enterMarks_lastName" prefWidth="128.0" text="Last Name" />
+                        <TableColumn fx:id="enterMarks_year" prefWidth="87.0" text="Year" />
+                        <TableColumn fx:id="enterMarks_course" text="Course" />
+                         <TableColumn fx:id="enterMarks_firstName" prefWidth="153.0" text="Major" />
+                        <TableColumn fx:id="enterMarks_lastName" prefWidth="128.0" text="Marks" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
 
 
                         <AnchorPane fx:id="studentGrade_form" layoutX="59.0" layoutY="47.0" prefHeight="555.0" prefWidth="897.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

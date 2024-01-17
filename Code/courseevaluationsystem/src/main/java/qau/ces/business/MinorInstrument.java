@@ -77,8 +77,6 @@ public class MinorInstrument {
         this.marks = marks;
     }
 
-
-    // Method to check if a MajorInstrument already exists
     public static boolean isMinorInstrumentExist(String name) {
         // Your logic to check existence in the database
         return false;
