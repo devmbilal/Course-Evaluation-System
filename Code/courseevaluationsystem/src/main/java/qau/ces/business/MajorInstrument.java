@@ -67,6 +67,30 @@ public class MajorInstrument {
     public void setMarks(int marks) {
         this.marks = marks;
     }
+    public List<String> fetchMajorsForCourse(String course) {
+        List<String> majors = new ArrayList<>();
+
+        String sql = "SELECT DISTINCT name FROM major_instrument WHERE course = ?";
+
+        try (Connection connection = database.connectDb();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, course);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    majors.add(resultSet.getString("name"));
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return majors;
+    }
+
+
 
     public static List<String> getCourses() {
        List<String> courses = new ArrayList<>();
