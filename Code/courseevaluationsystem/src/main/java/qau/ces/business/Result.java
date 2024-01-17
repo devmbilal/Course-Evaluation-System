@@ -8,6 +8,7 @@ import qau.ces.data.ResultDAO;
 public class Result {
     private String studentId;
     private String year;
+    private String semester;
     private String course;
     private String midTerm;
     private String terminal;
